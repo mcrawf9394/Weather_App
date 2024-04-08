@@ -1,15 +1,18 @@
-html {
+html, body {
     min-width: 100%;
     min-height: 100%;
     padding: 0%;
     margin: 0%;
 }
 #content {
-    height: 85vh;
     width: 100%;
 }
 footer {
     text-align: center;
+    background-color: #1f66ad;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 h3 {
     margin-top: 1rem;
@@ -23,6 +26,7 @@ h4 {
     text-align: center;
 }
 header  {
+    height: 8vh;
     display: grid;
     width: 100%;
     grid-template: 1fr/ 4fr 4fr 1fr;
@@ -35,4 +39,9 @@ header  {
 }
 #search {
     height: 3.4rem;
+    width: 50%;
+    margin-left: 1rem;
+}
+header {
+    background-color: #1f66ad;
 }

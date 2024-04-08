@@ -110,7 +110,7 @@ const currentDisplay = {
         wind.textContent = "Wind Speed " + locationTab.wind + " mph " + "Wind Direction " + locationTab.windDir
         const humidity = document.createElement('h4')
         humidity.textContent = "Humidity " + locationTab.humidity + "%"
-        currentWeather.append(temp, feelsLike, currentCondition, wind, humidity)
+        currentWeather.append(temp, feelsLike, wind, humidity, currentCondition)
         currentContainer.append(currentWeather)
         elements.body.append(tabTitle, measurementChange, currentContainer)
     },
@@ -126,4 +126,4 @@ const currentDisplay = {
         }
     }
 }
-console.log(info("grand rapids"))
+info("grand rapids")
