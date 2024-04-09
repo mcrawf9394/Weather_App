@@ -27,7 +27,7 @@ let info = async function (location) {
         let locationCountry = weatherInfo.location.country
         let currentTemp = weatherInfo.current.temp_f
         let currentTempC = weatherInfo.current.temp_c
-        let currentCondition = weatherInfo.current.condition.text
+        let currentCondition = weatherInfo.current.condition.icon
         let wind = weatherInfo.current.wind_mph
         let windKph = weatherInfo.current.wind_kph
         let windDir = weatherInfo.current.wind_dir
@@ -98,20 +98,21 @@ const currentDisplay = {
         measurementChange.append(label, checkBox)
         const currentContainer = document.createElement('div')
         currentContainer.id = "currentContainer"
-        const currentWeather = document.createElement('div')
+        const text = document.createElement('div')
         const temp = document.createElement('h4')
         temp.textContent = "Current Temp " + locationTab.currentTemp + "°F"
         temp.id = "temp"
         const feelsLike = document.createElement('h4')
         feelsLike.textContent = "Feels Like " + locationTab.feelsLike + "°F"
-        const currentCondition = document.createElement('h4')
-        currentCondition.textContent = locationTab.currentCondition
+        const currentCondition = document.createElement('img')
+        currentCondition.id = "currentCondition"
+        currentCondition.src = "http:" + locationTab.currentCondition
         const wind = document.createElement('h4')
         wind.textContent = "Wind Speed " + locationTab.wind + " mph " + "Wind Direction " + locationTab.windDir
         const humidity = document.createElement('h4')
         humidity.textContent = "Humidity " + locationTab.humidity + "%"
-        currentWeather.append(temp, feelsLike, wind, humidity, currentCondition)
-        currentContainer.append(currentWeather)
+        text.append(temp, feelsLike, wind, humidity)
+        currentContainer.append(text, currentCondition)
         elements.body.append(tabTitle, measurementChange, currentContainer)
     },
     displayRecommentations (title) {
