@@ -20,7 +20,7 @@ class locationTabs {
 }
 let info = async function (location) {
     try {
-        const response = await fetch('http://api.weatherapi.com/v1/current.json?key=78a9139ec4a1456ab09173528240504&q=' + location + '&aqi=no', {mode: 'cors'})
+        const response = await fetch('https://api.weatherapi.com/v1/current.json?key=78a9139ec4a1456ab09173528240504&q=' + location + '&aqi=no', {mode: 'cors'})
         let weatherInfo = await response.json()
         let locationName = weatherInfo.location.name
         let locationRegion = weatherInfo.location.region
@@ -46,7 +46,7 @@ let search = async function (value) {
     if (value.length > 4)
     try {
         currentDisplay.deleteRecommendations()
-        const response = await fetch('http://api.weatherapi.com/v1/search.json?key=78a9139ec4a1456ab09173528240504&q=' + value + '&aqi=no', {mode: 'cors'})
+        const response = await fetch('https://api.weatherapi.com/v1/search.json?key=78a9139ec4a1456ab09173528240504&q=' + value + '&aqi=no', {mode: 'cors'})
         let recommendations = await response.json()
         recommendations.forEach(recommendation => {
             let title = recommendation.name + " " + recommendation.region
